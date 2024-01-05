@@ -1,6 +1,6 @@
 const Colors ={
     main: "#FF0000",
-    while: "#FFFFFF",
+    white: "#FFFFFF",
     black: "#000000",
     lightBlack: "#BCBCBC",
     orange: "#FFCE31",

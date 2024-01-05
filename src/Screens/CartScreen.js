@@ -15,9 +15,7 @@ function CartScreen() {
             {/** IF CART EMPTY
             <CartEmpty/>*/}
             {/** CART ITEM */}
-            <ScrollView showsVerticalScrollIndicator={false}>
-                <CartItem/>
-            </ScrollView>
+            <CartItem/>
         </Box>
      );
 }

@@ -1,21 +1,21 @@
-import { Box, Center, HStack, Image, Pressable } from "native-base";
+import { Box, Center, HStack, Image, Pressable, Text, VStack } from "native-base";
 import React from "react";
-import { SwipeListView } from "react-native-swipe-list-view";
 import products from "../src/data/Products";
 import Colors from "../src/color";
-import { FontAwesome } from "@expo/vector-icons";
+import { FontAwesome } from '@expo/vector-icons';
+import { SwipeListView } from "react-native-swipe-list-view";
 
 const Swiper = () => {
-  <SwipeListView
-    rightOpenValue={-50}
-    previewRowKey="0"
-    previewOpenValue={-40}
-    previewOpenDelay={3000}
-    data={products.slice(0, 2)}
-    renderItem={renderIterms}
-    renderHiddenItem={hiddenIterms}
-    showsVerticalScrollIndicator={false}
-  />;
+<SwipeListView
+  rightOpenValue={-50}
+  previewRowKey="0"
+  previewOpenValue={-40}
+  previewOpenDelay={3000}
+  data={products.slice(0, 2)}
+  renderItem={renderIterms}
+  renderHiddenItem={hiddenIterms}
+  showsVerticalScrollIndicator={false}
+/>
 };
 const renderIterms = (data) => {
   <Pressable>
@@ -35,6 +35,11 @@ const renderIterms = (data) => {
             h={24}
           ></Image>
         </Center>
+        <VStack w="60%" px={2} space={3}>
+          <Text isTruncated color={Colors.black} bold fontSize={10}>
+            {data.item.name}
+          </Text>
+        </VStack>
       </HStack>
     </Box>
   </Pressable>;
@@ -52,8 +57,8 @@ const hiddenIterms = () => {
     justifyContent="center"
     bg={Colors.main}
   >
-    <Center alignItems="center" space={2}>
-      <FontAwesome name="trash" size={24} color={Colors.while} />
+    <Center alignItems="center" w={25} space={2}>
+      <FontAwesome name="trash" size={24} color={Colors.black} />
     </Center>
   </Pressable>;
 };
