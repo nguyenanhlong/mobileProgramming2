@@ -12,16 +12,18 @@ function Login({ navigation }) {
     const accounts = await AsyncStorage.getItem("user");
     if (accounts) {
       const accountArray = JSON.parse(accounts);
+      var flag = accountArray.find(
+        (account) =>
+          account.username == username && account.password == password
+      );
+      if (flag) {
+        alert( "Đăng nhập thành công!");
 
-      accountArray.forEach((account) => {
-        if (username === account.username && password === account.password) {
-          navigation.navigate("Home");
-          return;
-        } else {
-          alert("kiem tra lai thong tin dang nhap");
-          return;
-        }
-      });
+        navigation.navigate("Home");
+      } else {
+        alert( "Tài khoản hoặc mật khẩu không đúng!");
+        return;
+      }
     }
   };
   return (

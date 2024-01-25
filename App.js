@@ -10,6 +10,7 @@ import Profile from './components/profile/Profile';
 import Cart from './components/cart/Cart';
 import Product from './components/products/Product';
 import ProductDetail from './components/products/ProductDetail';
+import ProductByCat from './components/categories/ProductByCat';
 
 const Stack = createNativeStackNavigator();
 
@@ -49,6 +50,12 @@ export default function App() {
          options={{ headerShown: false }}
         />
         <Stack.Screen
+         name="ProductByCat"
+         component={ProductByCat}
+         options={{ headerShown: false }}
+        />
+        
+        <Stack.Screen
          name="Product"
          component={Product}
          options={{ headerShown: false }}
@@ -58,6 +65,7 @@ export default function App() {
          component={ProductDetail}
          options={{ headerShown: false }}
         />
+        
 
 
     </Stack.Navigator>
